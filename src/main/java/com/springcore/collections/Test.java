@@ -16,6 +16,10 @@ public class Test {
         System.out.println(bank);
         System.out.println("Employee within bank");
         System.out.println(bank.getEmployee());
+        
+        //bank2 which is a constructor based injected object
+        Bank bank2=(Bank) ctx.getBean("bank2");
+        System.out.println(bank2);
 	}
 
 }

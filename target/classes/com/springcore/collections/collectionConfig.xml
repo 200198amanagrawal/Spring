@@ -2,6 +2,7 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
  xmlns:context="http://www.springframework.org/schema/context"
  xmlns:p="http://www.springframework.org/schema/p"
+ xmlns:c="http://www.springframework.org/schema/c"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
  xsi:schemaLocation="http://www.springframework.org/schema/beans
  http://www.springframework.org/schema/beans/spring-beans.xsd">
@@ -29,5 +30,13 @@
  		</map>
  	</property>
  </bean>
+ 
+ <!-- reference injection employee-ref refers to the employee parameter which is passed in bank and ref is the reference it is going to use-->
  <bean class="com.springcore.collections.Bank" name="bank1" p:name="bankA" p:employee-ref="employee1"/>
+  
+  <!-- constructor injection-->
+ <bean class="com.springcore.collections.Bank" name="bank2">
+ 	<constructor-arg value="bankB" />
+ 	<constructor-arg ref="employee1" />
+ </bean>
 </beans>
