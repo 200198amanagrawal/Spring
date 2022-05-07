@@ -10,6 +10,12 @@ public class Test {
 		ApplicationContext ctx = new ClassPathXmlApplicationContext("com/springcore/collections/collectionConfig.xml");
         Employee employee=(Employee) ctx.getBean("employee1");
         System.out.println(employee);
+        
+        Bank bank=(Bank) ctx.getBean("bank1");
+        System.out.println();
+        System.out.println(bank);
+        System.out.println("Employee within bank");
+        System.out.println(bank.getEmployee());
 	}
 
 }

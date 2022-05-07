@@ -29,4 +29,5 @@
  		</map>
  	</property>
  </bean>
+ <bean class="com.springcore.collections.Bank" name="bank1" p:name="bankA" p:employee-ref="employee1"/>
 </beans>
