@@ -36,7 +36,7 @@
   
   <!-- constructor injection-->
  <bean class="com.springcore.collections.Bank" name="bank2">
- 	<constructor-arg value="bankB" />
+ 	<constructor-arg value="bankB" /><!-- type as a param can be used to remove ambiguity of constructors-->
  	<constructor-arg ref="employee1" />
  </bean>
 </beans>
