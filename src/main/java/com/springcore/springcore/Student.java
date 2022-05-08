@@ -1,5 +1,8 @@
 package com.springcore.springcore;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 public class Student {
 	private String studentId;
 	public Student() {
@@ -38,4 +41,15 @@ public class Student {
 	private String studentName;
 	private String studentAddress;
 	
+	@PostConstruct
+	public void init()
+	{
+		System.out.println("Init called via annotation");
+	}
+	
+	@PreDestroy
+	public void destroy()
+	{
+		System.out.println("Destroy called via annotation");
+	}
 }
