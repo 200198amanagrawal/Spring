@@ -1,6 +1,9 @@
 package com.springcore.collections;
 
-public class Bank {
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
+
+public class Bank implements InitializingBean,DisposableBean{
 	
 	@Override
 	public String toString() {
@@ -28,5 +31,17 @@ public class Bank {
 	}
 	public void setEmployee(Employee employee) {
 		this.employee = employee;
+	}
+	
+	//lifecycle method which is abstract in DisposableBean
+	public void destroy() throws Exception {
+		System.out.println("Destroyed call");
+		
+	}
+	
+	//lifecycle method which is abstract in InitializingBean
+	public void afterPropertiesSet() throws Exception {
+		System.out.println("Init called");
+		
 	}
 }
