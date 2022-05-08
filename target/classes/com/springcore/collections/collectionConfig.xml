@@ -33,10 +33,14 @@
  
  <!-- reference injection employee-ref refers to the employee parameter which is passed in bank and ref is the reference it is going to use-->
  <bean class="com.springcore.collections.Bank" name="bank1" p:name="bankA" p:employee-ref="employee1"/>
-  
+  <bean class="com.springcore.collections.Bank" name="bank" p:name="bankA" p:employee-ref="employee1"/>
   <!-- constructor injection-->
  <bean class="com.springcore.collections.Bank" name="bank2">
  	<constructor-arg value="bankB" /><!-- type as a param can be used to remove ambiguity of constructors-->
  	<constructor-arg ref="employee1" />
  </bean>
+ 
+  <bean class="com.springcore.collections.Customer" name="cust1" autowire="byName"/>
+  <!-- autowire can hold constructor and byType as well byType if two adresses will be there irrespective of the name they'll throw
+  an exception -->
 </beans>

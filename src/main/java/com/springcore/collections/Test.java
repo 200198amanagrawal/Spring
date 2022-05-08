@@ -22,6 +22,9 @@ public class Test {
         //bank2 which is a constructor based injected object
         Bank bank2=(Bank) ctx.getBean("bank2");
         System.out.println(bank2);
+        System.out.println("****************AUTO WIRE***********************");
+        Customer customer=(Customer) ctx.getBean("cust1");
+        System.out.println(customer);
 	}
 
 }
