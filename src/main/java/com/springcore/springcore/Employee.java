@@ -13,6 +13,10 @@ public class Employee {
 	
 	@Value("#{temp}")
 	private List<String> iplTeamList;
+	
+	// spEL is used which basically using #{} where we can use any static method,variable or object
+	@Value("#{T(java.lang.Math).PI}")
+	private double PI;
 	public String getName() {
 		return name;
 	}
@@ -36,15 +40,23 @@ public class Employee {
 		this.iplTeamList = iplTeamList;
 		this.city = city;
 	}
+	
 	@Override
 	public String toString() {
-		return "Employee [name=" + name + ", iplTeamList=" + iplTeamList + ", city=" + city + "]";
+		return "Employee [name=" + name + ", iplTeamList=" + iplTeamList + ", PI=" + PI + ", city=" + city + "]";
 	}
 	public List<String> getIplTeamList() {
 		return iplTeamList;
 	}
 	public void setIplTeamList(List<String> iplTeamList) {
 		this.iplTeamList = iplTeamList;
+	}
+
+	public double getPI() {
+		return PI;
+	}
+	public void setPI(double pI) {
+		PI = pI;
 	}
 
 	@Value("VNS")
