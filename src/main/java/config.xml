@@ -10,4 +10,5 @@
            http://www.springframework.org/schema/context/spring-context-3.1.xsd">
  <context:annotation-config/>
  <bean class="com.springcore.springcore.Student" name="student1" p:studentId="12345" p:studentName="Aman" p:studentAddress="VNS"/>
+ <context:component-scan base-package="com.springcore.springcore" />
 </beans>

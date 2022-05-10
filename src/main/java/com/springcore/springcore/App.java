@@ -1,6 +1,5 @@
 package com.springcore.springcore;
 
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -17,5 +16,9 @@ public class App
         ctx.registerShutdownHook();
         Student student=(Student) ctx.getBean("student1");
         System.out.println(student);
+        
+        //Component annotation is used in employee class which does not require bean tag to be declared in config file 
+        Employee employee=(Employee) ctx.getBean("ob",Employee.class);
+        System.out.println(employee);
     }
 }
