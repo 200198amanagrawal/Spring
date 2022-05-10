@@ -1,5 +1,7 @@
 package com.springcore.springcore;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -8,6 +10,9 @@ public class Employee {
 	
 	@Value("Aman")
 	private String name;
+	
+	@Value("#{temp}")
+	private List<String> iplTeamList;
 	public String getName() {
 		return name;
 	}
@@ -24,16 +29,24 @@ public class Employee {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Employee(String name, String city) {
+	
+	public Employee(String name, List<String> iplTeamList, String city) {
 		super();
 		this.name = name;
+		this.iplTeamList = iplTeamList;
 		this.city = city;
 	}
 	@Override
 	public String toString() {
-		return "Employee [name=" + name + ", city=" + city + "]";
+		return "Employee [name=" + name + ", iplTeamList=" + iplTeamList + ", city=" + city + "]";
 	}
-	
+	public List<String> getIplTeamList() {
+		return iplTeamList;
+	}
+	public void setIplTeamList(List<String> iplTeamList) {
+		this.iplTeamList = iplTeamList;
+	}
+
 	@Value("VNS")
 	private String city;
 }
